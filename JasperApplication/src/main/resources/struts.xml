@@ -3,16 +3,17 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
+
     <constant name="struts.devMode" value="true" />
+
     <package name="struts2" namespace="/" extends="struts-default, jasperreports-default">
-        <action name="categorias">
-            <result>/control.jsp</result>
-        </action>
-        <action name="generar" class="mx.cds.utez.jasperapplication.actions.JasperAction">
-            <result name="success" type="jasper">
-                <param name="dataSource">myList</param>
-                <param name="format">PDF</param>
-            </result>
+        <result-types>
+            <result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult"/>
+        </result-types>
+
+        <action name="generar" class="mx.cds.utez.jasperapplication.actions.JasperAction" method="getPdf">
+            <result name="success">/control.jsp</result>
+            <result name="error">/index.html</result>
         </action>
     </package>
 </struts>

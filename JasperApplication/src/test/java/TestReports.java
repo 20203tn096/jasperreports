@@ -3,6 +3,7 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,11 +20,11 @@ public class TestReports {
 
         List<Person> myList;
         // Create some imaginary persons.
-        Person p1 = new Person(new Long(1), "Patrick", "Lightbuddie");
-        Person p2 = new Person(new Long(2), "Jason", "Carrora");
-        Person p3 = new Person(new Long(3), "Alexandru", "Papesco");
-        Person p4 = new Person(new Long(4), "Jay", "Boss");
-        Person p5 = new Person(new Long(5), "Omar", "Morales");
+        Person p1 = new Person(1, "Patrick", "Lightbuddie", "Rodriguez", "10-02-2001", "H");
+        Person p2 = new Person(2, "Jason", "Carrora", "Mendoza", "12-01-2002", "H");
+        Person p3 = new Person(3, "Alexandra", "Papesco", "Garcia", "22-05-2002", "M");
+        Person p4 = new Person(4, "Jay", "Boss", "Mendiola", "25-08-2003", "M");
+        Person p5 = new Person(5, "Omar", "Morales", "Demetrio", "21-02-2002", "H");
 
 
         // Store people in our dataSource list (normally they would come from a database).
@@ -52,13 +53,20 @@ public class TestReports {
         try {
 
             JRDataSource data = new JRBeanCollectionDataSource(myList);
-            JasperPrint informe = JasperFillManager.fillReport(path,null, data);
+            JasperPrint informe = JasperFillManager.fillReport(path, null, data);
+            JasperExportManager.exportReportToPdfFile(informe, "src/main/webapp/jasper/Informe.pdf");
+            File objetofile = new File("src/main/webapp/jasper/Informe.pdf");
+            Desktop.getDesktop().open(objetofile);
+
+
+           /*
             JasperViewer ventanavisor = new JasperViewer(informe, false);
             ventanavisor.setVisible(true);
+            */
 
 
-        } catch (JRException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

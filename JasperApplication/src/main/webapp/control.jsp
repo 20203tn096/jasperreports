@@ -4,14 +4,16 @@
     Author     : CDS
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<% String context = application.getContextPath();%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hola estas en control!</h1>
-    </body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JSP Page</title>
+</head>
+<body>
+<h1>Hola ${context}</h1>
+<iframe src="./jasper/Informe.pdf" style="width:100%; height:700px;" frameborder="0"></iframe>
+</body>
 </html>

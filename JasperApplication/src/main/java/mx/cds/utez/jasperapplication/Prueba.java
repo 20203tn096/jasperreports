@@ -9,10 +9,10 @@ public class Prueba {
 
     public static List<Person> getPersons (){
         List<Person> personas = new ArrayList<>();
-        Person p1 = new Person(new Long(1), "Patrick", "Lightbuddie");
-        Person p2 = new Person(new Long(2), "Jason", "Carrora");
-        Person p3 = new Person(new Long(3), "Alexandru", "Papesco");
-        Person p4 = new Person(new Long(4), "Jay", "Boss");
+        Person p1 = new Person(1, "Patrick", "Lightbuddie", "Rodriguez", "10-02-2001", "H");
+        Person p2 = new Person(2, "Jason", "Carrora", "Mendoza", "12-01-2002", "H");
+        Person p3 = new Person(2, "Alexandra", "Papesco", "Garcia", "22-05-2002", "M");
+        Person p4 = new Person(2, "Jay", "Boss", "Mendiola", "25-08-2003", "M");
         personas.add(p1);
         personas.add(p2);
         personas.add(p3);

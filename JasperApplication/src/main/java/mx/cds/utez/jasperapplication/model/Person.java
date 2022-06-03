@@ -1,32 +1,44 @@
 package mx.cds.utez.jasperapplication.model;
 
 public class Person {
-    private Long id;
+    private int id;
 
     private String name;
 
     private String lastName;
 
+    private String surName;
+
+    private String fecha;
+
+    private String sexo;
+
     public Person() {
     }
 
-    public Person(String name, String lastName) {
-        this.name = name;
-        this.lastName = lastName;
-    }
-
-    public Person(Long id, String name, String lastName) {
+    public Person(int id, String name, String lastName, String surName, String fecha, String sexo) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
+        this.surName = surName;
+        this.fecha = fecha;
+        this.sexo = sexo;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLastName() {
@@ -37,11 +49,27 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getName() {
-        return name;
+    public String getSurName() {
+        return surName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }
